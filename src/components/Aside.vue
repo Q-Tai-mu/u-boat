@@ -3,12 +3,15 @@
  * @Description: 
  * @Author: MArio
  * @Date: 2021-11-06 22:12:29
- * @LastEditTime: 2021-11-06 23:13:34
+ * @LastEditTime: 2021-11-07 21:20:10
  * @LastEditors: MArio
 -->
 <template>
-  <div id="aside">
-    <div class="asideTabCard">
+  <div id="aseide">
+    <div
+      class="asideTabCard"
+      @click="changeView('Film')"
+    >
       <div>
         <svg
           t="1636209088580"
@@ -29,7 +32,7 @@
       </div>
       <div>首页</div>
     </div>
-    <div class="asideTabCard">
+    <div class="asideTabCard" @click="changeView('Meitu')">
       <div>
         <svg
           t="1636209754701"
@@ -65,7 +68,7 @@
       </div>
       <div>美图</div>
     </div>
-    <div class="asideTabCard">
+    <div class="asideTabCard" @click="changeView('Cuitu')">
       <div>
         <svg
           t="1636209852242"
@@ -94,9 +97,9 @@
           ></path>
         </svg>
       </div>
-      <div>翠图</div>
+      <div>列图</div>
     </div>
-    <div class="asideTabCard">
+    <div class="asideTabCard" @click="changeView('SetUp')">
       <div>
         <svg
           t="1636209608558"
@@ -126,10 +129,34 @@
 </template>
 
 <script>
-export default {};
+import { mapMutations } from "vuex";
+export default {
+  name: "aseide",
+  computed: {
+    view: {
+      get() {
+        return this.$store.getters.getView;
+      },
+      set(val) {
+        this.SET_VIEW(val);
+      },
+    },
+  },
+  methods: {
+    ...mapMutations(["SET_VIEW"]),
+    changeView(e) {
+      this.view = e;
+    },
+  },
+};
 </script>
 
 <style>
+.asideActive {
+  background-color: #e4e3e3;
+
+  border: 1px solid #e5e5e5;
+}
 .asideTabCard {
   width: 22%;
   padding: 5px;
@@ -143,10 +170,10 @@ export default {};
 .asideTabCard:hover {
   background-color: #e4e3e3;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
-  border-color: rgb(180, 26, 26);
+  border-color: rgb(163, 156, 156);
   transition: all 0.2s ease-in-out;
 }
-#aside {
+#aseide {
   position: fixed;
   height: 50px;
   width: 95.5%;
