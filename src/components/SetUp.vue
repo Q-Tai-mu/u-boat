@@ -383,6 +383,7 @@
         </div>
       </div>
     </div>
+
     <div class="setUpCard">
       <div
         v-show="disp == 19 || der == true"
@@ -422,7 +423,7 @@
         @click="changeDisp(19)"
         class="fandramCardBouttondropdown"
       >
-        <div class="fandramCardBouttondropdownCard">
+        <div class="fandramCardBouttondropdownCard" @click="pushVersion()">
           <div
             class="fandramCardBouttondropdownCardInfo"
             style="background-color: #94b5e9"
@@ -432,7 +433,7 @@
               class="fandramCardBouttondropdownCardText"
               style="padding-top: 4px"
             >
-              1.0.2Bata
+              检测更新
             </div>
           </div>
         </div>
@@ -449,17 +450,42 @@ export default {
       der: true,
       disp: 1,
       mask: "No",
+      speed: 10,
+      endId: "",
     };
   },
   methods: {
+    pushVersion() {
+      this.speed = 10;
+      //这里做版本判断
+      this.$Notify({
+        title: "有新的版本！",
+      });
+      setTimeout(this.updateMondle, 6000);
+    },
+    specificMondle() {
+      if (this.speed == 100) {
+        clearInterval(this.endId);
+        this.$Loading.finish();
+        this.$Message.error("更新失败，服务器未响应");
+      } else {
+        this.$Loading.update(this.speed);
+        this.speed = this.speed + 10;
+        //这里执行下载模块
+      }
+    },
+    updateMondle() {
+      this.$Message.info("更新下载中");
+      this.endId = setInterval(this.specificMondle, 2000);
+    },
     open() {
-       this.$Message.info('加载中')
+      this.$Message.info("加载中");
       this.$Loading.start();
       setTimeout(this.closeFin, 5000);
     },
     closeFin() {
       this.$Loading.finish();
-      this.$Message.error('暂无此功能')
+      this.$Message.error("查看失败");
     },
     changeDisp(e) {
       this.disp = e;
@@ -576,7 +602,7 @@ export default {
   height: 100%;
   font-size: 12px;
   padding-top: 15px;
-  padding-left: 5px;
+  padding-left: 15px;
 }
 .setUpCardItemIcon {
   width: 20px;
