@@ -3,12 +3,12 @@
  * @Description: 
  * @Author: MArio
  * @Date: 2021-11-06 22:05:56
- * @LastEditTime: 2021-11-09 11:27:15
+ * @LastEditTime: 2021-11-10 10:31:26
  * @LastEditors: MArio
 -->
 <template>
   <div id="homePage">
-    <div class="main">
+   <div class="main">
       <!-- 三个单选按钮，先默认选择第一个 -->
       <input class="input2" type="radio" name="choose" id="choose1" checked />
       <input class="input2" type="radio" name="choose" id="choose2" />
@@ -108,6 +108,7 @@
 <script>
 import axios from "axios";
 var cheerio = require("cheerio");
+
 export default {
   name: "homePage",
   data() {
@@ -119,13 +120,14 @@ export default {
       appHer: "公众号加载中...",
       mask: "No",
       dataCard: [[]],
-      PageIndex: [
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-      ],
+      PageIndex: [1, 2],
       pageNumber: 1,
     };
   },
   created() {
+    for (var i = 3; i < 200; i++) {
+      this.PageIndex.push(i);
+    }
     this.doInit();
   },
   methods: {
@@ -261,6 +263,8 @@ export default {
 </script>
 
 <style>
+
+
 .loadingSeven {
   width: 80px;
   height: 40px;

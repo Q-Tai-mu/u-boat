@@ -3,7 +3,7 @@
  * @Description: 
  * @Author: MArio
  * @Date: 2021-11-06 22:12:29
- * @LastEditTime: 2021-11-07 21:20:10
+ * @LastEditTime: 2021-11-10 10:42:16
  * @LastEditors: MArio
 -->
 <template>
@@ -168,7 +168,7 @@ export default {
   border-radius: 6px;
 }
 .asideTabCard:hover {
-  background-color: #e4e3e3;
+  background-color: #e9e9e9;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
   border-color: rgb(163, 156, 156);
   transition: all 0.2s ease-in-out;
@@ -179,7 +179,7 @@ export default {
   width: 95.5%;
   z-index: 100;
   bottom: 0;
-  background-color: #eaeaea;
+  background-color: #fcf9f9;
   /* border-radius: 6px; */
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;

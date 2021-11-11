@@ -3,47 +3,18 @@
  * @Description: 
  * @Author: MArio
  * @Date: 2021-11-07 09:33:08
- * @LastEditTime: 2021-11-07 09:45:14
+ * @LastEditTime: 2021-11-10 23:04:40
  * @LastEditors: MArio
 -->
 <template>
   <div id="cuitu">
-    <div class="CuituCardCumls Filmscro">
-      <div class="meituCardCItem">
-        <img
-          class="meituTablItemImg"
-          src="https://pic.netbian.com/uploads/allimg/211029/115213-163547953392a6.jpg"
-        />
-      </div>
-      <div class="meituCardCItem">
-        <img
-          class="meituTablItemImg"
-          src="https://pic.netbian.com/uploads/allimg/210718/001826-16265387066216.jpg"
-        />
-      </div>
-      <div class="meituCardCItem">
-        <img
-          class="meituTablItemImg"
-          src="https://pic.netbian.com/uploads/allimg/210922/191729-16323094499dcf.jpg"
-        />
-      </div>
-      <div class="meituCardCItem">
-        <img
-          class="meituTablItemImg"
-          src="https://pic.netbian.com/uploads/allimg/211025/105543-1635130543b705.jpg"
-        />
-      </div>
-      <div class="meituCardCItem">
-        <img
-          class="meituTablItemImg"
-          src="https://pic.netbian.com/uploads/allimg/210922/191502-1632309302364a.jpg"
-        />
-      </div>
-   <div class="meituCardCItem">
-        <img
-          class="meituTablItemImg"
-          src="https://pic.netbian.com/uploads/allimg/211020/235327-16347452070c83.jpg"
-        />
+    <div
+      ref="box"
+      class="CuituCardCumls Filmscro"
+      @scroll="handleScroll($event)"
+    >
+      <div class="meituCardCItem" v-for="item in imgSrc" :key="item.id">
+        <img class="meituTablItemImg" :src="item.imgSrc" />
       </div>
       
     </div>
@@ -51,8 +22,92 @@
 </template>
 
 <script>
+import axios from "axios";
+var cheerio = require("cheerio");
 export default {
   name: "cuitu",
+  data() {
+    return {
+      imgSrc: [],
+      PageIndex: [1, 2],
+      pageNumber: 1,
+    };
+  },
+  created() {
+    for (var i = 3; i < 145; i++) {
+      this.PageIndex.push(i);
+    }
+    this.doInit();
+  },
+  methods: {
+    doInit() {
+      axios
+        .get("https://pic.netbian.com/4kmeinv", { timeout: 120000 })
+        .then((resp) => {
+          var arr1 = [];
+          var $ = cheerio.load(resp.data);
+          $("ul.clearfix li").each(function (i, e) {
+            var pro = {
+              imgSrc:
+                "https://pic.netbian.com" +
+                $($(e).children("a")).children("img").attr("src"),
+              href: $(e).children("a").attr("href"),
+            };
+
+            arr1.push(pro);
+          });
+          this.imgSrc = arr1;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    handleScroll(e) {
+      var _this = this;
+      if (
+        parseInt(e.srcElement.scrollTop) +
+          parseInt(e.srcElement.offsetHeight) >=
+        parseInt(e.srcElement.scrollHeight.toString()) - 1
+      ) {
+        if (this.PageIndex[this.pageNumber] != null) {
+          this.pageNumber = this.PageIndex[this.pageNumber];
+          this.$refs.box.scrollTop = e.srcElement.scrollTop - 200;
+
+          //定一个一次性闹钟,延迟下加载，降低被封杀风险
+       
+            axios
+              .get(
+                "https://pic.netbian.com/4kmeinv/index_" +
+                  this.PageIndex[this.pageNumber] +
+                  ".html",
+                { timeout: 120000 }
+              )
+              .then((resp) => {
+                var arr1 = [];
+                var $ = cheerio.load(resp.data);
+                $("ul.clearfix li").each(function (i, e) {
+                  var pro = {
+                    imgSrc:
+                      "https://pic.netbian.com" +
+                      $($(e).children("a")).children("img").attr("src"),
+                    href: $(e).children("a").attr("href"),
+                  };
+
+                  arr1.push(pro);
+                });
+
+                for (var i = 0; i < arr1.length; i++) {
+                  _this.imgSrc.push(arr1[i]);
+                }
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+    
+        }
+      }
+    },
+  },
 };
 </script>
 

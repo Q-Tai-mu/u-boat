@@ -3,7 +3,7 @@
  * @Description: 
  * @Author: MArio
  * @Date: 2021-11-07 00:10:00
- * @LastEditTime: 2021-11-07 01:00:28
+ * @LastEditTime: 2021-11-10 10:45:28
  * @LastEditors: MArio
 -->
 <template>
@@ -124,7 +124,7 @@ export default {
   /* padding-top: 10%; */
   float: left;
   padding: 6px;
-
+  border-top-right-radius: 6px;
   text-align: center;
   -webkit-app-region: no-drag;
 }
@@ -166,6 +166,6 @@ export default {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   -webkit-app-region: drag;
-  background-color: #eaeaea;
+  background-color: #f0f0ea;
 }
 </style>

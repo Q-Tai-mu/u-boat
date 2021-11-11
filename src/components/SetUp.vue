@@ -69,7 +69,10 @@
         class="fandramCardBouttondropdown"
       >
         <div class="fandramCardBouttondropdownCard">
-          <div class="fandramCardBouttondropdownCardInfo" style="background-color: #94b5e9;">
+          <div
+            class="fandramCardBouttondropdownCardInfo"
+            style="background-color: #94b5e9"
+          >
             <div class="DaoHanCardLeftPross"></div>
             <div class="fandramCardBouttondropdownCardText">暂无此功能</div>
           </div>
@@ -129,7 +132,10 @@
         class="fandramCardBouttondropdown"
       >
         <div class="fandramCardBouttondropdownCard">
-          <div class="fandramCardBouttondropdownCardInfo" style="background-color: #94b5e9;"> 
+          <div
+            class="fandramCardBouttondropdownCardInfo"
+            style="background-color: #94b5e9"
+          >
             <div class="DaoHanCardLeftPross"></div>
             <div class="fandramCardBouttondropdownCardText">浅色</div>
           </div>
@@ -206,9 +212,18 @@
         class="fandramCardBouttondropdown"
       >
         <div class="fandramCardBouttondropdownCard">
-          <div class="fandramCardBouttondropdownCardInfo" style="background-color: #94b5e9;">
+          <div
+            class="fandramCardBouttondropdownCardInfo"
+            style="background-color: #94b5e9"
+          >
             <div class="DaoHanCardLeftPross"></div>
-            <div class="fandramCardBouttondropdownCardText">暂无此功能</div>
+            <div class="fandramCardBouttondropdownCardText">安全资源</div>
+          </div>
+        </div>
+        <div class="fandramCardBouttondropdownCard">
+          <div class="fandramCardBouttondropdownCardInfo">
+            <div class="DaoHanCardLeftProssNo"></div>
+            <div class="fandramCardBouttondropdownCardText">灰色资源</div>
           </div>
         </div>
       </div>
@@ -292,9 +307,12 @@
         class="fandramCardBouttondropdown"
       >
         <div class="fandramCardBouttondropdownCard">
-          <div class="fandramCardBouttondropdownCardInfo" style="background-color: #94b5e9;">
+          <div
+            class="fandramCardBouttondropdownCardInfo"
+            style="background-color: #94b5e9"
+          >
             <div class="DaoHanCardLeftPross"></div>
-            <div class="fandramCardBouttondropdownCardText">暂无此功能</div>
+            <div class="fandramCardBouttondropdownCardText">设置代理（根据提示操作）</div>
           </div>
         </div>
       </div>
@@ -353,7 +371,10 @@
         class="fandramCardBouttondropdown"
       >
         <div class="fandramCardBouttondropdownCard">
-          <div class="fandramCardBouttondropdownCardInfo" style="background-color: #94b5e9;">
+          <div
+            class="fandramCardBouttondropdownCardInfo"
+            style="background-color: #94b5e9"
+          >
             <div class="DaoHanCardLeftPross"></div>
             <div class="fandramCardBouttondropdownCardText">暂无功能</div>
           </div>
@@ -400,9 +421,12 @@
         class="fandramCardBouttondropdown"
       >
         <div class="fandramCardBouttondropdownCard">
-          <div class="fandramCardBouttondropdownCardInfo" style="background-color: #94b5e9;">
+          <div
+            class="fandramCardBouttondropdownCardInfo"
+            style="background-color: #94b5e9"
+          >
             <div class="DaoHanCardLeftPross"></div>
-            <div class="fandramCardBouttondropdownCardText">1.0.2Bata</div>
+            <div class="fandramCardBouttondropdownCardText" style="padding-top:4px;">1.0.2Bata</div>
           </div>
         </div>
       </div>
