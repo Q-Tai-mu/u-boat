@@ -3,15 +3,12 @@
  * @Description: 
  * @Author: MArio
  * @Date: 2021-11-06 22:12:29
- * @LastEditTime: 2021-11-10 10:42:16
+ * @LastEditTime: 2021-11-11 14:46:44
  * @LastEditors: MArio
 -->
 <template>
   <div id="aseide">
-    <div
-      class="asideTabCard"
-      @click="changeView('Film')"
-    >
+    <div class="asideTabCard" @click="changeView('Film')">
       <div>
         <svg
           t="1636209088580"
@@ -158,7 +155,7 @@ export default {
   border: 1px solid #e5e5e5;
 }
 .asideTabCard {
-  width: 22%;
+  width: 25%;
   padding: 5px;
   height: 100%;
   float: left;
@@ -176,7 +173,7 @@ export default {
 #aseide {
   position: fixed;
   height: 50px;
-  width: 95.5%;
+  width: 100%;
   z-index: 100;
   bottom: 0;
   background-color: #fcf9f9;

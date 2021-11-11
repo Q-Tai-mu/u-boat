@@ -3,12 +3,12 @@
  * @Description: 
  * @Author: MArio
  * @Date: 2021-11-06 22:05:56
- * @LastEditTime: 2021-11-10 10:31:26
+ * @LastEditTime: 2021-11-11 14:53:16
  * @LastEditors: MArio
 -->
 <template>
   <div id="homePage">
-   <div class="main">
+    <div class="main">
       <!-- 三个单选按钮，先默认选择第一个 -->
       <input class="input2" type="radio" name="choose" id="choose1" checked />
       <input class="input2" type="radio" name="choose" id="choose2" />
@@ -152,7 +152,7 @@ export default {
           this.dataCard = arr1.reduce(
             (pre, next, idx) => {
               // reduce 用来便利数组，具体语法就 rtfm 吧
-              const inner = pre[~~(idx / 5)]; // ~~用来取整，inner 是内层数组
+              const inner = pre[~~(idx / 3)]; // ~~用来取整，inner 是内层数组
               if (inner !== undefined) {
                 // 判断有没有内层数组
                 inner.push(next); // 如果有就把遍历的值 next push 到内层数组里
@@ -202,7 +202,7 @@ export default {
               var dataCard = arr1.reduce(
                 (pre, next, idx) => {
                   // reduce 用来便利数组，具体语法就 rtfm 吧
-                  const inner = pre[~~(idx / 5)]; // ~~用来取整，inner 是内层数组
+                  const inner = pre[~~(idx / 3)]; // ~~用来取整，inner 是内层数组
                   if (inner !== undefined) {
                     // 判断有没有内层数组
                     inner.push(next); // 如果有就把遍历的值 next push 到内层数组里
@@ -263,8 +263,6 @@ export default {
 </script>
 
 <style>
-
-
 .loadingSeven {
   width: 80px;
   height: 40px;
@@ -409,16 +407,15 @@ export default {
   object-position: top;
 }
 .homePageImgCard {
-  width: 98px;
+  width: 106.5px;
   height: 170px;
   background-color: #f9f9f9;
   border: 1px solid #e5e5e5;
   border-radius: 6px;
   margin: 3px;
-  -webkit-transition: all 250ms cubic-bezier(0.02, 0.01, 0.47, 1);
   transition: all 250ms cubic-bezier(0.02, 0.01, 0.47, 1);
-  /* -webkit-box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.15); */
-  /* box-shadow: 0 4px 16px rgba(48, 55, 66, 0.15); */
+  /* -webkit-box-shadow: 0 0.25rem 1rem rgb(48 55 66 / 15%); */
+  /* box-shadow: 0 4px 16px rgb(48 55 66 / 15%); */
 }
 .homePageImgCard:hover {
   box-shadow: 0 16px 32px 0 rgba(48, 55, 66, 0.15);
@@ -428,10 +425,11 @@ export default {
 .homePageCardD {
   height: 72%;
   /* width: 100%; */
-  width: 97.4%;
+  width: 100%;
   /* padding: 5px; */
   padding: 5px;
   /* padding-top: 10px; */
+  /* padding-left: 5%;
 }
 .itemImg {
   width: 100%;
@@ -510,9 +508,9 @@ export default {
 }
 
 .main {
-  margin-left: 4.2px;
+  margin-left: 6.5px;
   position: relative;
-  width: 97.4%;
+  width: 95.6%;
   height: 110px;
   overflow: hidden;
   border-radius: 5px;
@@ -530,6 +528,6 @@ export default {
   height: 100%;
   background-color: #f9f9f9;
   /* padding-left: 5px; */
-  padding-top: 30px;
+  padding-top: 37px;
 }
 </style>

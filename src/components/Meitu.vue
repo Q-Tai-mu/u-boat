@@ -3,7 +3,7 @@
  * @Description: 
  * @Author: MArio
  * @Date: 2021-11-07 08:28:28
- * @LastEditTime: 2021-11-10 16:48:55
+ * @LastEditTime: 2021-11-11 14:48:44
  * @LastEditors: MArio
 -->
 <template>
@@ -248,6 +248,6 @@ export default {
   height: 100%;
   background-color: #f9f9f9;
   /* padding-left: 5px; */
-  padding-top: 30px;
+  padding-top: 32px;
 }
 </style>

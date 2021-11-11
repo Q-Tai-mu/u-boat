@@ -3,7 +3,7 @@
  * @Description: 
  * @Author: MArio
  * @Date: 2021-11-07 00:10:00
- * @LastEditTime: 2021-11-10 10:45:28
+ * @LastEditTime: 2021-11-11 14:50:55
  * @LastEditors: MArio
 -->
 <template>
@@ -118,8 +118,8 @@ export default {
   height: 100%;
 }
 .BinarylinkageGan {
-  width: 20%;
-  height: 18px;
+  width: 33%;
+  height: 30px;
   /* background-color: aqua; */
   /* padding-top: 10%; */
   float: left;
@@ -135,8 +135,8 @@ export default {
   background-color: #e81123;
 }
 .Binarylinkage {
-  width: 20%;
-  height: 18px;
+  width: 33%;
+  height: 30px;
   /* background-color: aqua; */
   /* padding-top: 10%; */
   float: left;
@@ -161,7 +161,7 @@ export default {
   position: fixed;
   z-index: 100;
   height: 30px;
-  width: 95.5%;
+  width: 100%;
   top: 0;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;

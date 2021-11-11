@@ -3,7 +3,7 @@
  * @Description: 
  * @Author: MArio
  * @Date: 2021-11-06 21:26:21
- * @LastEditTime: 2021-11-06 23:32:19
+ * @LastEditTime: 2021-11-11 15:00:10
  * @LastEditors: MArio
 -->
 <template>
@@ -32,6 +32,7 @@ body #app {
   border-radius: 6px;
   overflow: hidden;
   margin: 0px;
+
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

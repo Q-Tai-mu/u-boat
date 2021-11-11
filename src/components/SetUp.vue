@@ -68,13 +68,13 @@
         @click="changeDisp(9)"
         class="fandramCardBouttondropdown"
       >
-        <div class="fandramCardBouttondropdownCard">
+        <div class="fandramCardBouttondropdownCard" @click="open">
           <div
             class="fandramCardBouttondropdownCardInfo"
             style="background-color: #94b5e9"
           >
             <div class="DaoHanCardLeftPross"></div>
-            <div class="fandramCardBouttondropdownCardText">暂无此功能</div>
+            <div class="fandramCardBouttondropdownCardText">查看日志</div>
           </div>
         </div>
       </div>
@@ -312,7 +312,9 @@
             style="background-color: #94b5e9"
           >
             <div class="DaoHanCardLeftPross"></div>
-            <div class="fandramCardBouttondropdownCardText">设置代理（根据提示操作）</div>
+            <div class="fandramCardBouttondropdownCardText">
+              设置代理（根据提示操作）
+            </div>
           </div>
         </div>
       </div>
@@ -426,7 +428,12 @@
             style="background-color: #94b5e9"
           >
             <div class="DaoHanCardLeftPross"></div>
-            <div class="fandramCardBouttondropdownCardText" style="padding-top:4px;">1.0.2Bata</div>
+            <div
+              class="fandramCardBouttondropdownCardText"
+              style="padding-top: 4px"
+            >
+              1.0.2Bata
+            </div>
           </div>
         </div>
       </div>
@@ -445,6 +452,15 @@ export default {
     };
   },
   methods: {
+    open() {
+       this.$Message.info('加载中')
+      this.$Loading.start();
+      setTimeout(this.closeFin, 5000);
+    },
+    closeFin() {
+      this.$Loading.finish();
+      this.$Message.error('暂无此功能')
+    },
     changeDisp(e) {
       this.disp = e;
     },
@@ -597,6 +613,6 @@ export default {
   height: 100%;
   background-color: #f9f9f9;
   /* padding-left: 5px; */
-  padding-top: 25px;
+  padding-top: 35px;
 }
 </style>
