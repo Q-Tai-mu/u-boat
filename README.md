@@ -21,4 +21,6 @@ yarn lint
 ```
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 🧩 截图
+
+![截图](./src/assets/HomeMain.png)

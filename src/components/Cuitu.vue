@@ -1,11 +1,4 @@
-<!--
- * @公司名: 北京雨花石云计算
- * @Description: 
- * @Author: MArio
- * @Date: 2021-11-07 09:33:08
- * @LastEditTime: 2021-11-11 14:48:17
- * @LastEditors: MArio
--->
+
 <template>
   <div id="cuitu">
     <div
@@ -110,6 +103,7 @@ export default {
   },
 };
 </script>
+
 
 <style>
 .CuituCardCumls {
